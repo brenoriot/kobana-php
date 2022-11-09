@@ -1,18 +1,20 @@
-# Boleto Simples PHP
+# Kobana PHP
 
-[![Lates Stable Version](https://img.shields.io/packagist/v/boletosimples/boletosimples.svg)][packagist]
-[![Build Status](http://img.shields.io/travis/BoletoSimples/boletosimples-php.svg)][travis]
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/BoletoSimples/boletosimples-php.svg)][scrutinizer]
-[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/BoletoSimples/boletosimples-php.svg)][scrutinizer_coverage]
-[![License](https://img.shields.io/packagist/l/boletosimples/boletosimples.svg)][packagist_license]
+Antes de qualquer coisa, este é um fork do [projeto original](https://github.com/BoletoSimples/boletosimples-php), já obsoleto, e que visa atualizar principalmente urls, pós troca de `boletosimples` para `kobana`
 
-[packagist]: https://packagist.org/packages/boletosimples/boletosimples
-[travis]: http://travis-ci.org/BoletoSimples/boletosimples-php
-[scrutinizer]: https://scrutinizer-ci.com/g/BoletoSimples/boletosimples-php/
-[scrutinizer_coverage]: https://scrutinizer-ci.com/g/BoletoSimples/boletosimples-php/
-[packagist_license]: https://github.com/BoletoSimples/boletosimples-php/blob/master/LICENSE
+[![Lates Stable Version](https://img.shields.io/packagist/v/kobana/kobana.svg)][packagist]
+[![Build Status](http://img.shields.io/travis/operandbr/kobana-php.svg)][travis]
+[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/operandbr/kobana-php.svg)][scrutinizer]
+[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/operandbr/kobana-php.svg)][scrutinizer_coverage]
+[![License](https://img.shields.io/packagist/l/kobana/kobana.svg)][packagist_license]
 
-Biblioteca PHP para acessar informações do [Boleto Simples](http://boletosimples.com.br) através da [API](http://api.boletosimples.com.br).
+[packagist]: https://packagist.org/packages/kobana/kobana
+[travis]: http://travis-ci.org/operandbr/kobana-php
+[scrutinizer]: https://scrutinizer-ci.com/g/operandbr/kobana-php/
+[scrutinizer_coverage]: https://scrutinizer-ci.com/g/operandbr/kobana-php/
+[packagist_license]: https://github.com/operandbr/kobana-php/blob/master/LICENSE
+
+Biblioteca PHP para acessar informações do [Kobana](https://www.kobana.com.br/) através da [API](https://developers.kobana.com.br/reference/visao-geral).
 
 ## Instalação
 
@@ -36,7 +38,9 @@ Crie um arquivo chamado `composer.json` com o seguinte conteúdo:
 
 Execute:
 
-    $ composer install
+```bash
+composer install
+```
 
 ## Configuração
 
@@ -242,11 +246,15 @@ $discharge = BoletoSimples\Discharge::create(array (
 
 Instale as dependências
 
-    $ composer install
+```bash
+composer install
+```
 
 Rode os testes
 
-    $ ./vendor/bin/phpunit
+```bash
+./vendor/bin/phpunit
+```
 
 ## Licença
 
@@ -254,12 +262,4 @@ Esse código é livre para ser usado dentro dos termos da licença [MIT license]
 
 ## Bugs, Issues, Agradecimentos, etc
 
-Comentários são bem-vindos. Envie seu feedback através do [issue tracker do GitHub](http://github.com/BoletoSimples/boletosimples-php/issues)
-
-## Autor
-
-[**Rafael Lima**](http://github.com/rafaelp) trabalhando no [Boleto Simples](http://boletosimples.com.br)
-
-Blog: [http://rafael.adm.br](http://rafael.adm.br)
-
-Twitter: [http://twitter.com/rafaelp](http://twitter.com/rafaelp)
+Comentários são bem-vindos. Envie seu feedback através do [issue tracker do GitHub](http://github.com/operandbr/kobana-php/issues)

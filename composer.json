@@ -1,9 +1,9 @@
 {
-	"name": "boletosimples/boletosimples",
+	"name": "operandbr/kobana",
 	"type": "library",
-	"description": "A PHP client library for easily accessing Boleto Simples API.",
-	"keywords": ["boleto","simples","boletosimples","ecommerce"],
-	"homepage": "http://api.boletosimples.com.br",
+	"description": "A PHP client library for easily accessing Kobana API.",
+	"keywords": ["boleto","simples","boletosimples","ecommerce", "kobana"],
+	"homepage": "http://api.kobana.com.br",
 	"license": "MIT",
 	"authors": [
 		{
@@ -13,9 +13,8 @@
 		}
 	],
   "support": {
-    "email": "suporte@boletosimples.com.br",
-    "issues": "http://github.com/BoletoSimples/boletosimples-php/issues",
-    "sources": "https://github.com/BoletoSimples/boletosimples-php"
+    "issues": "http://github.com/operandbr/kobana-php/issues",
+    "sources": "https://github.com/operandbr/kobana-php"
   },
   "require": {
     "guzzlehttp/guzzle": "5.*",
