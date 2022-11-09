@@ -3,15 +3,9 @@
 Antes de qualquer coisa, este é um fork do [projeto original](https://github.com/BoletoSimples/boletosimples-php), já obsoleto, e que visa atualizar principalmente urls, pós troca de `boletosimples` para `kobana`
 
 [![Lates Stable Version](https://img.shields.io/packagist/v/operandbr/kobana.svg)][packagist]
-[![Build Status](http://img.shields.io/travis/operandbr/kobana-php.svg)][travis]
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/operandbr/kobana-php.svg)][scrutinizer]
-[![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/operandbr/kobana-php.svg)][scrutinizer_coverage]
 [![License](https://img.shields.io/packagist/l/kobana/kobana.svg)][packagist_license]
 
 [packagist]: https://packagist.org/packages/kobana/kobana
-[travis]: http://travis-ci.org/operandbr/kobana-php
-[scrutinizer]: https://scrutinizer-ci.com/g/operandbr/kobana-php/
-[scrutinizer_coverage]: https://scrutinizer-ci.com/g/operandbr/kobana-php/
 [packagist_license]: https://github.com/operandbr/kobana-php/blob/master/LICENSE
 
 Biblioteca PHP para acessar informações do [Kobana](https://www.kobana.com.br/) através da [API](https://developers.kobana.com.br/reference/visao-geral).

@@ -10,6 +10,11 @@
 			"name": "Rafael Lima",
 			"email": "contato@rafael.adm.br",
 			"homepage": "http://rafael.adm.br/"
+		},
+        {
+			"name": "Otávio Augusto Borges Pinto",
+			"email": "otaviobpinto@gmail.com",
+			"role": "Back-end Developer"
 		}
 	],
   "support": {
@@ -17,6 +22,7 @@
     "sources": "https://github.com/operandbr/kobana-php"
   },
   "require": {
+	"php": ">=5.5",
     "guzzlehttp/guzzle": "5.*",
     "commerceguys/guzzle-oauth2-plugin": "2.*"
 	},
