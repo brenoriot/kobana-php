@@ -2,7 +2,7 @@
 
 Antes de qualquer coisa, este é um fork do [projeto original](https://github.com/BoletoSimples/boletosimples-php), já obsoleto, e que visa atualizar principalmente urls, pós troca de `boletosimples` para `kobana`
 
-[![Lates Stable Version](https://img.shields.io/packagist/v/kobana/kobana.svg)][packagist]
+[![Lates Stable Version](https://img.shields.io/packagist/v/operandbr/kobana.svg)][packagist]
 [![Build Status](http://img.shields.io/travis/operandbr/kobana-php.svg)][travis]
 [![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/operandbr/kobana-php.svg)][scrutinizer]
 [![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/operandbr/kobana-php.svg)][scrutinizer_coverage]
@@ -31,7 +31,7 @@ Crie um arquivo chamado `composer.json` com o seguinte conteúdo:
   "minimum-stability": "dev",
   "prefer-stable" : true,
   "require": {
-    "operandbr/kobana": "0.0.6"
+    "operandbr/kobana": "0.0.10"
   }
 }
 ```
