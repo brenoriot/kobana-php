@@ -2,5 +2,6 @@
 
 namespace BoletoSimples;
 
-class EmailDelivery extends BaseResource {
+class EmailDelivery extends BaseResource
+{
 }

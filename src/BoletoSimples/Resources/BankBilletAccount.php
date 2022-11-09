@@ -2,5 +2,6 @@
 
 namespace BoletoSimples;
 
-class BankBilletAccount extends BaseResource {
+class BankBilletAccount extends BaseResource
+{
 }

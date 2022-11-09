@@ -1,14 +1,15 @@
 <?php
 
-class BoletoSimples {
-  const VERSION = "0.0.9";
-  public static $configuration = null;
-  public static $last_request = null;
+class BoletoSimples
+{
+    public const VERSION = '0.0.10';
+    public static $configuration;
+    public static $last_request;
 
-  public static function configure($params = array()) {
-    BoletoSimples::$configuration = new BoletoSimples\Configuration($params);
-  }
-
+    public static function configure($params = [])
+    {
+        BoletoSimples::$configuration = new BoletoSimples\Configuration($params);
+    }
 }
 
 BoletoSimples::configure();

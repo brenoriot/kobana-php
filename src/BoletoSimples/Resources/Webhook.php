@@ -2,5 +2,6 @@
 
 namespace BoletoSimples;
 
-class Webhook extends BaseResource {
+class Webhook extends BaseResource
+{
 }

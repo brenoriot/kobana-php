@@ -2,5 +2,6 @@
 
 namespace BoletoSimples;
 
-class Import extends BaseResource {
+class Import extends BaseResource
+{
 }

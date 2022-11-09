@@ -2,5 +2,6 @@
 
 namespace BoletoSimples;
 
-class Event extends BaseResource {
+class Event extends BaseResource
+{
 }

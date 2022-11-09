@@ -2,5 +2,6 @@
 
 namespace BoletoSimples;
 
-class Installment extends BaseResource {
+class Installment extends BaseResource
+{
 }
