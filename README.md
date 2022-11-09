@@ -3,7 +3,7 @@
 Antes de qualquer coisa, este é um fork do [projeto original](https://github.com/BoletoSimples/boletosimples-php), já obsoleto, e que visa atualizar principalmente urls, pós troca de `boletosimples` para `kobana`
 
 [![Lates Stable Version](https://img.shields.io/packagist/v/operandbr/kobana.svg)][packagist]
-[![License](https://img.shields.io/packagist/l/kobana/kobana.svg)][packagist_license]
+[![License: MIT](https://img.shields.io/packagist/l/operandbr/kobana.svg)][packagist_license]
 
 [packagist]: https://packagist.org/packages/kobana/kobana
 [packagist_license]: https://github.com/operandbr/kobana-php/blob/master/LICENSE
@@ -14,7 +14,7 @@ Biblioteca PHP para acessar informações do [Kobana](https://www.kobana.com.br/
 
 ### Requisitos
 
-PHP 5.4 ou superior
+PHP 5.5 ou superior
 
 ### Usando [Composer](https://getcomposer.org/)
 
@@ -22,11 +22,11 @@ Crie um arquivo chamado `composer.json` com o seguinte conteúdo:
 
 ```json
 {
-  "minimum-stability": "dev",
-  "prefer-stable" : true,
-  "require": {
-    "operandbr/kobana": "0.0.10"
-  }
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
+    "require": {
+        "operandbr/kobana": "0.0.10"
+    }
 }
 ```
 
@@ -43,10 +43,10 @@ composer install
 
 require_once 'vendor/autoload.php';
 
-BoletoSimples::configure(array(
-  "environment" => 'production', // default: 'sandbox'
-  "access_token" => 'access-token'
-));
+BoletoSimples::configure([
+    "environment" => 'production', // default: 'sandbox'
+    "access_token" => 'access-token'
+]);
 
 ?>
 ```
@@ -68,23 +68,23 @@ ENV['BOLETOSIMPLES_ACCESS_TOKEN']
 
 ```php
 // Criar um boleto
-$bank_billet = BoletoSimples\BankBillet::create(array (
-  'amount' => 9.01,
-  'description' => 'Despesas do contrato 0012',
-  'expire_at' => '2014-01-01',
-  'customer_address' => 'Rua quinhentos',
-  'customer_address_complement' => 'Sala 4',
-  'customer_address_number' => '111',
-  'customer_city_name' => 'Rio de Janeiro',
-  'customer_cnpj_cpf' => '012.345.678-90',
-  'customer_email' => 'cliente@example.com',
-  'customer_neighborhood' => 'Sao Francisco',
-  'customer_person_name' => 'Joao da Silva',
-  'customer_person_type' => 'individual',
-  'customer_phone_number' => '2112123434',
-  'customer_state' => 'RJ',
-  'customer_zipcode' => '12312-123'
-));
+$bank_billet = BoletoSimples\BankBillet::create([
+    'amount' => 9.01,
+    'description' => 'Despesas do contrato 0012',
+    'expire_at' => '2014-01-01',
+    'customer_address' => 'Rua quinhentos',
+    'customer_address_complement' => 'Sala 4',
+    'customer_address_number' => '111',
+    'customer_city_name' => 'Rio de Janeiro',
+    'customer_cnpj_cpf' => '012.345.678-90',
+    'customer_email' => 'cliente@example.com',
+    'customer_neighborhood' => 'Sao Francisco',
+    'customer_person_name' => 'Joao da Silva',
+    'customer_person_type' => 'individual',
+    'customer_phone_number' => '2112123434',
+    'customer_state' => 'RJ',
+    'customer_zipcode' => '12312-123'
+]);
 
 // Criar um novo boleto instanciando o objeto
 $bank_billet = new BoletoSimples\BankBillet(['amount' => 199.99, 'expire_at' => '2020-01-01']);
@@ -153,19 +153,19 @@ $bank_billet->cancel();
 
 ```php
 // Criar um cliente
-$customer = BoletoSimples\Customer::create(array (
-  'person_name' => "Joao da Silva",
-  'cnpj_cpf' => "321.315.217-07",
-  'email' => "cliente@example.com",
-  'address' => "Rua quinhentos",
-  'city_name' => "Rio de Janeiro",
-  'state' => "RJ",
-  'neighborhood' => "bairro",
-  'zipcode' => "12312-123",
-  'address_number' => "111",
-  'address_complement' => "Sala 4",
-  'phone_number' => "2112123434"
-));
+$customer = BoletoSimples\Customer::create([
+    'person_name' => "Joao da Silva",
+    'cnpj_cpf' => "321.315.217-07",
+    'email' => "cliente@example.com",
+    'address' => "Rua quinhentos",
+    'city_name' => "Rio de Janeiro",
+    'state' => "RJ",
+    'neighborhood' => "bairro",
+    'zipcode' => "12312-123",
+    'address_number' => "111",
+    'address_complement' => "Sala 4",
+    'phone_number' => "2112123434"
+]);
 
 // Criar um novo cliente instanciando o objeto
 $customer = new BoletoSimples\Customer();
@@ -205,7 +205,7 @@ BoletoSimples::$last_request->links['last'] // url da última página
 // Listar todas as transações
 $transactions = BoletoSimples\Transaction::all();
 foreach($transactions as $transaction) {
-  print_r($transaction->attributes());
+    print_r($transaction->attributes());
 }
 ```
 
@@ -220,9 +220,9 @@ $userinfo = BoletoSimples\Extra::userinfo();
 
 ```php
 // Criar uma remessa
-$remittance = BoletoSimples\Remittance::create(array (
-  'bank_billet_account_id' => "1"
-));
+$remittance = BoletoSimples\Remittance::create([
+    'bank_billet_account_id' => "1"
+]);
 ```
 
 ### Retornos
@@ -231,9 +231,9 @@ $remittance = BoletoSimples\Remittance::create(array (
 // Enviar um retorno
 //Caminho para o seu arquivo
 $path = realpath(dirname(__FILE__) . '/cnab.txt');
-$discharge = BoletoSimples\Discharge::create(array (
-  'content' => file_get_contents($path)
-));
+$discharge = BoletoSimples\Discharge::create([
+    'content' => file_get_contents($path)
+]);
 ```
 
 ## Desenvolvendo
