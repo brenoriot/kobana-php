@@ -4,11 +4,14 @@ namespace BoletoSimples;
 
 class Configuration
 {
-    private $environments_uri = ['sandbox' => 'https://sandbox.boletosimples.com.br/api/v1/', 'production' => 'https://boletosimples.com.br/api/v1/'];
     public $environment;
     public $application_id;
     public $application_secret;
     public $access_token;
+    private $environments_uri = [
+        'sandbox' => 'https://api-sandbox.kobana.com.br/v1/',
+        'production' => 'https://api.kobana.com.br/v1/',
+    ];
 
     public function __construct($params = [])
     {
