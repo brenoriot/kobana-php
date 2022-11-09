@@ -31,7 +31,7 @@ Crie um arquivo chamado `composer.json` com o seguinte conteúdo:
   "minimum-stability": "dev",
   "prefer-stable" : true,
   "require": {
-    "boletosimples/boletosimples": "dev-master"
+    "operandbr/kobana": "0.0.6"
   }
 }
 ```

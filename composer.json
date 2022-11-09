@@ -3,7 +3,7 @@
 	"type": "library",
 	"description": "A PHP client library for easily accessing Kobana API.",
 	"keywords": ["boleto","simples","boletosimples","ecommerce", "kobana"],
-	"homepage": "http://api.kobana.com.br",
+	"homepage": "https://developers.kobana.com.br/reference/visao-geral",
 	"license": "MIT",
 	"authors": [
 		{
