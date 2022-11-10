@@ -28,7 +28,7 @@ class Configuration
 
     public function userAgent()
     {
-        return 'BoletoSimples PHP Client v'.\BoletoSimples::VERSION.' (contato@boletosimples.com.br)';
+        return 'Kobana PHP Client v'.\BoletoSimples::VERSION.' (suporte@kobana.com.br)';
     }
 
     public function hasAccessToken()

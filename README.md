@@ -177,7 +177,7 @@ $customer->save();
 // Mensagens de erro na criação do cliente
 $customer = BoletoSimples\Customer::create(['person_name' => 'Joao da Silva', 'cnpj_cpf' => '321.315.217-07']);
 print_r($customer->response_errors);
-  // ["cnpj_cpf"=>["já está em uso"],"zipcode"=>["não pode ficar em branco"]]
+// ["cnpj_cpf"=>["já está em uso"],"zipcode"=>["não pode ficar em branco"]]
 
 // Pegar informações de um cliente
 $customer = BoletoSimples\Customer::find(1); // onde 1 é o id do cliente.
@@ -187,7 +187,7 @@ $customer = BoletoSimples\Customer::find(1); // onde 1 é o id do cliente.
 // Listar os clientes
 $customers = BoletoSimples\Customer::all(['page' => 1, 'per_page' => 50]);
 foreach($customers as $customer) {
-  print_r($customer->attributes());
+    print_r($customer->attributes());
 }
 
  // Após realizar a chamada na listagem, você terá acesso aos seguintes dados:
@@ -229,7 +229,7 @@ $remittance = BoletoSimples\Remittance::create([
 
 ```php
 // Enviar um retorno
-//Caminho para o seu arquivo
+// Caminho para o seu arquivo
 $path = realpath(dirname(__FILE__) . '/cnab.txt');
 $discharge = BoletoSimples\Discharge::create([
     'content' => file_get_contents($path)

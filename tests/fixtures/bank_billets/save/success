@@ -2,13 +2,13 @@
 -
     request:
         method: POST
-        url: 'https://sandbox.boletosimples.com.br/api/v1/bank_billets'
+        url: 'https://api-sandbox.kobana.com.br/v1/bank_billets'
         headers:
-            Host: sandbox.boletosimples.com.br
+            Host: api-sandbox.kobana.com.br
             Expect: null
             Accept-Encoding: null
             Content-Type: application/json
-            User-Agent: 'BoletoSimples PHP Client v0.0.5 (contato@boletosimples.com.br)'
+            User-Agent: 'Kobana PHP Client v0.0.10 (suporte@kobana.com.br)'
             Authorization: 'Bearer BOLETOSIMPLES_ACCESS_TOKEN'
             Accept: null
         body: '{"bank_billet":{"amount":"9,99","expire_at":"2015-01-01","customer_cnpj_cpf":"012.345.678-90","customer_person_name":"Joao da Silva","customer_zipcode":"12312-123","description":"Cobran\u00e7a XPTO"}}'
@@ -21,7 +21,7 @@
             Server: Cowboy
             Connection: keep-alive
             Strict-Transport-Security: max-age=2592000
-            Location: 'https://sandbox.boletosimples.com.br/api/v1/bank_billets/799'
+            Location: 'https://api-sandbox.kobana.com.br/v1/bank_billets/799'
             Content-Type: 'application/json; charset=utf-8'
             X-Ratelimit-Limit: '500'
             X-Ratelimit-Remaining: '494'
