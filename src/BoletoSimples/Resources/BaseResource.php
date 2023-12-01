@@ -104,15 +104,16 @@ class BaseResource
     public function parseResponse($response)
     {
         $status = $response->getStatusCode();
+        $responseContent = json_decode($response->getBody()->getContents(), true);
         if ($status >= 200 && $status <= 299) {
-            if ($response->json()) {
-                $this->_attributes = $response->json();
+            if (count($responseContent) > 0) {
+                $this->_attributes = $responseContent;
             }
 
             return true;
         }
-        if (isset($response->json()['errors'])) {
-            $this->response_errors = $response->json()['errors'];
+        if ($responseContent['errors']) {
+            $this->response_errors = $responseContent['errors'];
         }
 
         return false;
@@ -148,17 +149,11 @@ class BaseResource
     {
         $config = \BoletoSimples::$configuration;
 
-        $oauth2 = new Oauth2Subscriber();
-        $oauth2->setAccessToken($config->access_token);
-
         self::$client = new Client([
-            'base_url' => $config->baseUri(),
-            'defaults' => [
-                'headers' => [
-                    'User-Agent' => $config->userAgent(),
-                ],
-                'auth' => 'oauth2',
-                'subscribers' => [$oauth2],
+            'base_uri' => $config->baseUri(),
+            'headers' => [
+                'User-Agent' => $config->userAgent(),
+                'Authorization' => "Bearer {$config->access_token}"
             ],
             'verify' => false,
         ]);
@@ -218,10 +213,12 @@ class BaseResource
     private static function _sendRequest($method, $path, $options = [])
     {
         $options = array_merge(self::$default_options, $options);
-        $request = self::$client->createRequest($method, $path, $options);
-        $response = self::$client->send($request);
-        \BoletoSimples::$last_request = new LastRequest($request, $response);
-        if ($response->getStatusCode() >= 400 && $response->getStatusCode() <= 599) {
+
+        $response = self::$client->request($method, $path, $options);
+
+        \BoletoSimples::$last_request = new LastRequest($response, $response);
+
+        if ((int)$response->getStatusCode() >= 400 && (int)$response->getStatusCode() <= 599) {
             new ResponseError($response);
         }
 
