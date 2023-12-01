@@ -2,7 +2,7 @@
 
 class BoletoSimples
 {
-    public const VERSION = '0.0.10';
+    CONST VERSION = '0.0.10';
     public static $configuration;
     public static $last_request;
 
