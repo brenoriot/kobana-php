@@ -25,10 +25,10 @@ class ResponseError extends \Exception
                 foreach ($json['errors'] as $errorTitle => $errorContent)
                 {
                     if (is_array($errorContent) === true) {
-                        $this->message = $errorContent[0];
+                        $this->message = $errorTitle . ' - ' . $errorContent[0];
                         throw $this;
                     } else {
-                        $this->message = $errorContent;
+                        $this->message = $errorTitle . ' - ' . $errorContent;
                         throw $this;
                     }
                 }
