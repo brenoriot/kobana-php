@@ -21,6 +21,19 @@ class ResponseError extends \Exception
         $json = json_decode($response->getBody()->getContents(), true);
 
         if (isset($json['errors'])) {
+            if (is_array($json['errors']) === true) {
+                foreach ($json['errors'] as $errorTitle => $errorContent)
+                {
+                    if (is_array($errorContent) === true) {
+                        $this->message = $errorContent[0];
+                        throw $this;
+                    } else {
+                        $this->message = $errorContent;
+                        throw $this;
+                    }
+                }
+            }
+
             $message = '';
             if (isset($json['errors'][0]['title'])) {
                 $message .= $json['errors'][0]['title'] . ' - ';
