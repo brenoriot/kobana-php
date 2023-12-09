@@ -13,24 +13,23 @@ class ResponseError extends \Exception
      * Constructor method.
      *
      * @param mixed $response
+     * @throws ResponseError
      */
     public function __construct($response)
     {
         $this->response = $response;
 
         $json = json_decode($response->getBody()->getContents(), true);
-
         if (isset($json['errors'])) {
             if (is_array($json['errors']) === true) {
                 foreach ($json['errors'] as $errorTitle => $errorContent)
                 {
                     if (is_array($errorContent) === true) {
-                        $this->message = $errorTitle . ' - ' . $errorContent[0];
-                        throw $this;
+                        $this->message = $errorTitle . ' - ' . isset($errorContent['title']) ? $errorContent['title'] : $errorContent[0];
                     } else {
                         $this->message = $errorTitle . ' - ' . $errorContent;
-                        throw $this;
                     }
+                    throw $this;
                 }
             }
 
