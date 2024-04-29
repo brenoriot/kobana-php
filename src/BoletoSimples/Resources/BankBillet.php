@@ -83,6 +83,6 @@ class BankBillet extends BaseResource
         }
         $response = self::sendRequest('PUT', "bank_billets/{$id}/cancel", ['body' => json_encode(['cancellation_reason' => $reason])]);
 
-        return $response->json();
+        return $response;
     }
 }
