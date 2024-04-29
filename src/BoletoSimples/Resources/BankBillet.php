@@ -2,15 +2,10 @@
 
 namespace BoletoSimples;
 
+use Exception;
+
 class BankBillet extends BaseResource
 {
-    public function cancel()
-    {
-        $response = self::sendRequest('PUT', $this->path('cancel'));
-
-        return $this->parseResponse($response);
-    }
-
     public function duplicate($params = [])
     {
         $response = self::sendRequest('POST', $this->path('duplicate'), ['query' => $params]);
@@ -77,6 +72,16 @@ class BankBillet extends BaseResource
     public static function update($id, $params)
     {
         $response = self::sendRequest('PUT', "bank_billets/{$id}", ['body' => json_encode($params)]);
+
+        return $response->json();
+    }
+
+    public static function cancel($id, $reason)
+    {
+        if (in_array($reason, [1, 2, 3, 4, 5]) === false) {
+            throw new Exception('Motivo do cancelamento inválido!');
+        }
+        $response = self::sendRequest('PUT', "bank_billets/{$id}/cancel", ['body' => json_encode(['cancellation_reason' => $reason])]);
 
         return $response->json();
     }
