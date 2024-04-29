@@ -28,7 +28,7 @@ class BankBillet extends BaseResource
     public static function cnpj_cpf($cnpj_cpf)
     {
         if (!$cnpj_cpf) {
-            throw new \Exception("Couldn't find ".get_called_class().' without an cnpj or cpf.');
+            throw new \Exception("Couldn't find " . get_called_class() . ' without an cnpj or cpf.');
         }
         $response = self::sendRequest('GET', 'bank_billets/cnpj_cpf', ['query' => ['q' => $cnpj_cpf]]);
         $collection = [];
@@ -42,7 +42,7 @@ class BankBillet extends BaseResource
     public static function status($status)
     {
         if (!$status) {
-            throw new \Exception("Couldn't find ".get_called_class().' without an status.');
+            throw new \Exception("Couldn't find " . get_called_class() . ' without an status.');
         }
         $response = self::sendRequest('GET', 'bank_billets/status', ['query' => ['q' => $status]]);
         $collection = [];
@@ -56,7 +56,7 @@ class BankBillet extends BaseResource
     public static function our_number($our_number)
     {
         if (!$our_number) {
-            throw new \Exception("Couldn't find ".get_called_class().' without an our_number.');
+            throw new \Exception("Couldn't find " . get_called_class() . ' without an our_number.');
         }
         $response = self::sendRequest('GET', 'bank_billets/our_number', ['query' => ['q' => $our_number]]);
         $collection = [];
@@ -70,6 +70,13 @@ class BankBillet extends BaseResource
     public static function bulk($params)
     {
         $response = self::sendRequest('POST', 'bank_billets/bulk', ['body' => json_encode(['bank_billets' => $params])]);
+
+        return $response->json();
+    }
+
+    public static function update($id, $params)
+    {
+        $response = self::sendRequest('PUT', "bank_billets/{$id}", ['body' => json_encode($params)]);
 
         return $response->json();
     }
